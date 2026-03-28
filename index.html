@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Симулятор проектных ситуаций</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <div class="app-container">
+        <section id="screen-root" class="screen-root" aria-live="polite"></section>
+      </div>
+    </main>
+
+    <template id="skill-template">
+      <section class="landing">
+        <h1 class="landing-title">Симулятор проектных ситуаций</h1>
+        <p class="landing-subtitle">Выберите навык для тренировки</p>
+        <div id="skill-list" class="skills-grid"></div>
+      </section>
+    </template>
+
+    <template id="simulation-template">
+      <article class="card simulation-card">
+        <div id="step-header-slot"></div>
+    
+        <section class="content-card">
+          <h3 class="block-title">Ситуация</h3>
+          <p id="scenario-description" class="body-text"></p>
+        </section>
+    
+        <section id="before-answer-block">
+          <h3 class="block-title">Как вы поступите?</h3>
+          <div id="answers" class="answers"></div>
+        </section>
+    
+        <section id="after-answer-block" hidden>
+          <h3 class="block-title">Ваш выбор</h3>
+          <div id="selected-answer" class="selected-answer-card"></div>
+    
+          <div id="feedback-card" class="feedback-card">
+            <div class="feedback-header-row">
+              <h3 class="block-title">Обратная связь</h3>
+              <span id="feedback-score-badge" class="score-badge"></span>
+            </div>
+            <p id="feedback-status" class="feedback-status"></p>
+            <p id="feedback-text" class="body-text"></p>
+          </div>
+        </section>
+      </article>
+    </template>
+
+    <template id="result-template">
+      <article class="card">
+        <h2>Результат шага</h2>
+        <p id="result-message"></p>
+        <p id="result-score" class="muted"></p>
+        <button id="next-btn" class="btn btn-primary">Продолжить</button>
+      </article>
+    </template>
+
+    <template id="summary-template">
+      <article class="summary-screen">
+        <h2 class="summary-title">Симуляция завершена!</h2>
+        <p id="summary-skill" class="summary-skill"></p>
+
+        <p id="summary-score" class="summary-score">
+          <span id="summary-score-main"></span><span id="summary-score-total"></span>
+        </p>
+        <p id="summary-level" class="summary-level-badge"></p>
+
+        <p id="summary-description" class="summary-description"></p>
+
+        <section class="summary-improvements">
+          <h3>Что можно улучшить:</h3>
+          <ul id="summary-list" class="summary-list"></ul>
+        </section>
+
+        <div class="summary-actions">
+          <button id="restart-btn" class="btn summary-btn-primary">Пройти еще раз</button>
+          <button id="summary-to-skills-btn" class="btn summary-btn-secondary">К выбору навыков</button>
+        </div>
+      </article>
+    </template>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>
